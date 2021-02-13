@@ -21,12 +21,12 @@ describe('bind method', () => {
   });
 
   test('test rest is used or not', () => {
-    const foo = function (x) {
-      return this.y + x;
+    const foo = function (x, z) {
+      return this.y + x + z;
     };
     const obj = { y: 10 };
     var y = 100;
     const bar = bind(foo, obj);
-    expect(bar(10)).toBe(20);
+    expect(bar(10, 20)).toBe(40);
   });
 });
